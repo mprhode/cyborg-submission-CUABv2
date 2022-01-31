@@ -103,8 +103,6 @@ def train(agent_name="Blue", gamma=0.99, epsilon=1, lr=0.0001,
             env = ChallengeWrapper(agent_name="Blue",
                                    env=CybORG(PATH, 'sim', agents=agent_list[agent_counter % len(agent_list)]))
     except KeyboardInterrupt:
-        plot_learning_curve(steps_array, scores, eps_history, FIGURE_FILE)
-
         agent.save_models()
 
 
